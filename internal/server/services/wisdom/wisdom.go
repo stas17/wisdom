@@ -4,11 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/pkg/errors"
 	"net"
 	"net/http"
-	"time"
-
-	"github.com/pkg/errors"
 
 	"wisdom/internal/pkg/pow"
 	"wisdom/internal/server/config"
@@ -81,10 +79,6 @@ func (wdm *wisdom) wisdomHandler() http.Handler {
 			w.WriteHeader(http.StatusInternalServerError)
 		}
 	})
-}
-
-func (wdm *wisdom) getRandomWisdom() string {
-	return time.Now().Format(time.Kitchen)
 }
 
 func (wdm *wisdom) signatureMiddleware(next http.Handler) http.Handler {

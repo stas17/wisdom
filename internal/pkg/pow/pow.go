@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const targetBits = 12
+const targetBits = 24
 const maxNonce = math.MaxInt
 
 //ProofOfWork implementation of proof of work service. Uses the SHA256 algorithm for validation
@@ -55,7 +55,6 @@ func (pow *proofOfWork) PrepareData(nonce int) []byte {
 		[][]byte{
 			[]byte(pow.block.Data),
 			[]byte(fmt.Sprintf("%x", pow.block.Timestamp)),
-			[]byte(fmt.Sprintf("%x", int64(targetBits))),
 			[]byte(fmt.Sprintf("%x", int64(nonce))),
 		},
 		[]byte{},
