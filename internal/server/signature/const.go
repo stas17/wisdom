@@ -1,0 +1,3 @@
+package signature
+
+const delimiter = "|"

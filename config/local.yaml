@@ -1,0 +1,6 @@
+app:
+  httpWisdomAddr: ":8080"
+  salt: "hyiujnbh42bhyujnbhyuj"
+logging:
+  enabled: true
+  level: debug

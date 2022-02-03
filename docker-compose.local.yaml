@@ -1,0 +1,20 @@
+version: '2.4'
+
+services:
+
+  server:
+    container_name: wisdom
+    build:
+      dockerfile: server.Dockerfile
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_CONFIG_FILE=/app/config/local.yaml
+      - APP_SECRET_CONFIG=/app/config/local.yaml
+  client:
+    build:
+      dockerfile: client.Dockerfile
+      context: .
+    depends_on:
+      - server
