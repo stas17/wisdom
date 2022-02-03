@@ -1,12 +1,12 @@
-#Kozma Prutkov says
+# Kozma Prutkov says
 This is a service that sends one aphorism of Kuzma Prutkov.
 
-####How it works
+#### How it works
 The service implements a few concepts for safety work.
 - *The challenge-response protocol*. The first client must get a signature for the request.
 - *Pow.* Then the client needs to compute the hash from signature, TimeStamp, and nonce by sha256 algorithm. That hash must contain zero value in first 24 bytes. Wisdom is never free.
 
-####How to launch and test
+#### How to launch and test
 For easy work, there is a makefile.
 ```shell
 
